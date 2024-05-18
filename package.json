@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:personal-website": "node dist/personal-website/server/server.mjs"
+    "serve:ssr:personal-website": "node dist/personal-website/server/server.mjs",
+    "build:client-and-server-bundles": "ng build --prod && ng run personal-website:server",
+    "build:ssr": "npm run build:client-and-server-bundles",
+    "serve:ssr": "node dist/server"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +24,8 @@
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.7",
+    "@nguniversal/express-engine": "^7.0.2",
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -40,5 +45,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
